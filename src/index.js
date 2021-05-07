@@ -12,5 +12,5 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use('/', routers);
 
 app.listen(3000, () => {
-    console.log('servidor arrancado');
+    console.log('servidor Iniciado');
 });
