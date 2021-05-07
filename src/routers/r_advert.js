@@ -1,26 +1,26 @@
 const router = require('express').Router();
 
-const { table4 } = require('../db');
+const { table1 } = require('../db');
 
 router.get('/', async (req, res) => {
-    const resul = await table4.findAll();
+    const resul = await table1.findAll();
     res.json(resul);
 })
 
 router.post('/', async (req, res) => {
-    const resul = await table4.create(req.body);
+    const resul = await table1.create(req.body);
     res.json(resul);
 });
 
 router.put('/:Id', async (req, res) => {
-    await table4.update(req.body, {
+    await table1.update(req.body, {
         where: { id: req.params.Id }
     });
     res.json({ success: 'Registro actualizado'});
 });
 
 router.delete('/:Id', async (req, res) => {
-    await table4.destroy({
+    await table1.destroy({
         where: { id: req.params.Id }
     });
     res.json({ success: 'Registro eliminado'});
