@@ -7,6 +7,14 @@ router.get('/', async (req, res) => {
     res.json(resul);
 })
 
+router.get('/:id', async (req, res) => {
+    const resul = await table1.findById(id)
+    .then(data => {
+        res.json(data);
+});
+
+});
+
 router.post('/', async (req, res) => {
     const resul = await table1.create(req.body);
     res.json(resul);

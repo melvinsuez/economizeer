@@ -1,0 +1,120 @@
+<h1><small>Datos del Anuncio</small></h1>
+<hr>
+
+<div class="row text-end">
+    <div class="col">
+        <button class="btn btn-danger"
+                routerLink="/ads">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+        </button>
+    </div>
+</div>
+
+
+<div class="row animated fadeIn faster">
+    <div class="col">
+
+        <form (ngSubmit)='guardar(f)'
+                #f="ngForm">
+            <div class="form-group">
+                <label>Id</label>
+                <input type="text"
+                        class="form-control"
+                        placeholder="Id anuncio"
+                        [(ngModel)]="ad.id"
+                        name="id">
+                <small class="form-text text-muted">Campo auto-generado</small>
+            </div>
+
+            <div class="form-group">
+                <label>Id Anunciante</label>
+                <input type="text"
+                        class="form-control"
+                        placeholder="Id anuncio"
+                        [(ngModel)]="ad.idadvertiser"
+                        name="idanunciante">
+                <small class="form-text text-muted">Campo auto-generado</small>
+            </div>
+
+            <div class="form-group">
+                <label>Titulo</label>
+                <input type="text"
+                        class="form-control"
+                        placeholder="Titulo anuncio"
+                        [(ngModel)]="ad.title"
+                        name="titulo"
+                        required>
+            </div>
+
+            <div class="form-group">
+                <label>Precio</label>
+                <input type="text"
+                        class="form-control"
+                        placeholder="Ingrese precio del producto/servicio"
+                        [(ngModel)]="ad.price"
+                        name="precio"
+                        required>
+            </div>
+
+            <div class="form-group">
+                <label>Descuento</label>
+                <input type="text"
+                        class="form-control"
+                        placeholder="Ingrese descuento del producto/servicio"
+                        [(ngModel)]="ad.discount"
+                        name="descuento"
+                        required>
+            </div>
+
+            <div class="form-group">
+                <label>Oferta</label>
+                <input type="text"
+                        class="form-control"
+                        placeholder="Ingrese precio final del producto/servicio"
+                        [(ngModel)]="ad.offer"
+                        name="oferta"
+                        required>
+            </div>
+
+            <div class="form-group">
+                <label>Descripcion</label>
+                <input type="text"
+                        class="form-control"
+                        placeholder="Ingrese descripcion del producto/servicio"
+                        [(ngModel)]="ad.description"
+                        name="descripcion"
+                        required>
+            </div>
+            
+            <div class="form-group">
+                <label>Status</label>
+                <br>
+                <button *ngIf="ad.status"
+                        (click)="ad.status =false"
+                    class="btn btn-outline-success w-50" type="button">
+                    <i class="fa fa-smile-wink"></i>
+                    Activo
+                </button>
+                
+                <button *ngIf="!ad.status"
+                        (click)="ad.status =true"
+                class="btn btn-outline-danger w-50" type="button">
+                    <i class="fa fa-dizzy"></i>
+                    Inactivo
+                </button>
+            </div>
+            <hr>
+
+            <div class="form-group text-center">
+                <button type="sudmit"
+                        class="btn btn-primary w-25">
+                <i class="fa fa-save"></i>    
+                Guardar
+                </button>
+            </div>
+
+        </form>
+    
+    </div>
+</div>
